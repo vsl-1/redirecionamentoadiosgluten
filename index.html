@@ -6,53 +6,29 @@
     <title>Redirigiendo...</title>
     <script>
         function redirigir() {
-            window.location.href = "https://www.novodominio.com";
+            window.location.href = "https://pay.hotmart.com/R97380566L?offDiscount=55%25OFF";
         }
 
-        // Redireciona imediatamente
+        // Tenta redirecionar imediatamente
         setTimeout(redirigir, 100);
 
-        // Se após 5 segundos o usuário ainda estiver na página, exibe o botão de pagamento
+        // Se após 5 segundos o usuário ainda estiver na página, exibe o botão
         setTimeout(function() {
-            document.getElementById("mensaje").innerHTML = "No pudimos redirigirte automáticamente. Haz clic en el botón abajo.";
             document.getElementById("botonPago").style.display = "inline-block";
-            document.getElementById("spinner").style.display = "none"; // Oculta o ícone de carregamento
         }, 5000);
     </script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #333;
-        }
-        .container {
-            max-width: 500px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        .btn {
-            display: none; /* Oculto inicialmente */
-            background-color: #ff4500;
-            color: white;
-            padding: 15px 20px;
-            margin-top: 20px;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
-        }
-        .btn:hover {
-            background-color: #e63e00;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            margin: 0;
         }
         /* Ícone de carregamento */
         .spinner {
-            margin: 20px auto;
             width: 50px;
             height: 50px;
             border: 5px solid #f3f3f3;
@@ -64,18 +40,26 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        /* Botão oculto inicialmente */
+        .btn {
+            display: none;
+            background-color: #ff4500;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #e63e00;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Redirigiendo...</h1>
-        <p id="mensaje">Por favor, espera mientras procesamos tu acceso.</p>
+    <div class="spinner"></div>
 
-        <!-- Ícone de carregamento -->
-        <div id="spinner" class="spinner"></div>
-        
-        <!-- Botão para pagamento, oculto até que seja necessário -->
-        <a id="botonPago" href="https://www.tupagina-de-pago.com" class="btn">Pagar ahora</a>
-    </div>
+    <!-- Botão aparece só depois de 5 segundos se o redirecionamento falhar -->
+    <a id="botonPago" href="https://pay.hotmart.com/R97380566L?offDiscount=55%25OFF" class="btn">Pagar ahora</a>
 </body>
 </html>
