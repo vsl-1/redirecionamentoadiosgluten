@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procesando tu acceso...</title>
+    <title>Redirigiendo...</title>
     <script>
         function redirigir() {
             window.location.href = "https://www.novodominio.com";
         }
 
+        // Tenta redirecionar imediatamente
+        setTimeout(redirigir, 100);
+
+        // Se após 5 segundos o usuário ainda estiver aqui, mostra o botão de pagamento
         setTimeout(function() {
-            try {
-                redirigir();
-            } catch (e) {
-                document.getElementById("mensaje").innerHTML = "No pudimos redirigirte automáticamente. Haz clic en el botón abajo.";
-                document.getElementById("botonPago").style.display = "inline-block";
-            }
-        }, 30000);
+            document.getElementById("mensaje").innerHTML = "No pudimos redirigirte automáticamente. Haz clic en el botón abajo.";
+            document.getElementById("botonPago").style.display = "inline-block";
+        }, 5000);
     </script>
     <style>
         body {
@@ -53,8 +53,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Procesando tu acceso...</h1>
-        <p id="mensaje">En breve serás redirigido automáticamente. Si esto no ocurre, espera unos segundos.</p>
+        <h1>Redirigiendo...</h1>
+        <p id="mensaje">Si la página no se abre automáticamente, espera unos segundos.</p>
         
         <!-- Botão para pagamento, oculto até que seja necessário -->
         <a id="botonPago" href="https://www.tupagina-de-pago.com" class="btn">Pagar ahora</a>
