@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Procesando tu acceso...</title>
     <script>
+        function redirigir() {
+            window.location.href = "https://www.novodominio.com";
+        }
+
         setTimeout(function() {
-            window.location.href = "https://hotm.art/adiosgluten";
-        }, 30000); // Redireciona após 30 segundos
+            try {
+                redirigir();
+            } catch (e) {
+                document.getElementById("mensaje").innerHTML = "No pudimos redirigirte automáticamente. Haz clic en el botón abajo.";
+                document.getElementById("botonPago").style.display = "inline-block";
+            }
+        }, 30000);
     </script>
     <style>
         body {
@@ -28,7 +37,7 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         .btn {
-            display: inline-block;
+            display: none; /* Oculto inicialmente */
             background-color: #ff4500;
             color: white;
             padding: 15px 20px;
@@ -45,10 +54,10 @@
 <body>
     <div class="container">
         <h1>Procesando tu acceso...</h1>
-        <p>En breve serás redirigido. Si la página no se abre automáticamente en 30 segundos, haz clic en el botón abajo para continuar.</p>
+        <p id="mensaje">En breve serás redirigido automáticamente. Si esto no ocurre, espera unos segundos.</p>
         
-        <!-- Botão para pagamento -->
-        <a href="https://hotm.art/adiosgluten" class="btn">Pagar ahora</a>
+        <!-- Botão para pagamento, oculto até que seja necessário -->
+        <a id="botonPago" href="https://www.tupagina-de-pago.com" class="btn">Pagar ahora</a>
     </div>
 </body>
 </html>
