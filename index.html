@@ -6,16 +6,17 @@
     <title>Redirigiendo...</title>
     <script>
         function redirigir() {
-            window.location.href = "https://pay.hotmart.com/R97380566L?offDiscount=55%25OFF";
+            window.location.href = "https://www.novodominio.com";
         }
 
-        // Tenta redirecionar imediatamente
+        // Redireciona imediatamente
         setTimeout(redirigir, 100);
 
-        // Se após 5 segundos o usuário ainda estiver aqui, mostra o botão de pagamento
+        // Se após 5 segundos o usuário ainda estiver na página, exibe o botão de pagamento
         setTimeout(function() {
             document.getElementById("mensaje").innerHTML = "No pudimos redirigirte automáticamente. Haz clic en el botón abajo.";
             document.getElementById("botonPago").style.display = "inline-block";
+            document.getElementById("spinner").style.display = "none"; // Oculta o ícone de carregamento
         }, 5000);
     </script>
     <style>
@@ -49,15 +50,32 @@
         .btn:hover {
             background-color: #e63e00;
         }
+        /* Ícone de carregamento */
+        .spinner {
+            margin: 20px auto;
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #ff4500;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Redirigiendo...</h1>
-        <p id="mensaje">Si la página no se abre automáticamente, espera unos segundos.</p>
+        <p id="mensaje">Por favor, espera mientras procesamos tu acceso.</p>
+
+        <!-- Ícone de carregamento -->
+        <div id="spinner" class="spinner"></div>
         
         <!-- Botão para pagamento, oculto até que seja necessário -->
-        <a id="botonPago" href="https://pay.hotmart.com/R97380566L?offDiscount=55%25OFF" class="btn">Pagar ahora</a>
+        <a id="botonPago" href="https://www.tupagina-de-pago.com" class="btn">Pagar ahora</a>
     </div>
 </body>
 </html>
